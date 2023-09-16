@@ -1,81 +1,173 @@
+/*this is an html feature that affects how the auto navigation behaves*/
 html {
   scroll-snap-type: smooth;
+  min-height: 100%;
 }
 
+/*universal code thats affecting the height and width as well as a universal font family*/
 * {
   box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-body {
-  font-family: Arial;
-  margin: 0;
-}
+/*made the header a flex parent, gives the header a color, applies padding to the contents, affects the text color of everything inside, is putting equal space between all content, alines everything across x axis*/
 
 header {
   display: flex;
-  padding: 10px;
+  /* padding: 10px; */
   text-align: center;
-  background: #1c5f35;
+  background: #040404;
   color: #fff;
   justify-content: space-between;
   align-items: center;
 }
 
+header h2 {
+  position: absolute;
+  top: 100px;
+  right: 400px;
+  font-size: 30px;
+  font-family: monospace; 
+}
+
+header h1 {
+  font-size: 50px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 20px;
+  font-family: monospace;
+  
+}
+
+/*makes image inside header stretched*/
+hero img {
+  width: 100%;
+  height: 200px;
+  
+}
+
+/*makes nav bar exist due to background color, pushes text to the right of nav-bar,gives it a margin to space out the nav bar from header*/
+/*cut two lines of code to stack nav bar onto header*/
 nav {
   display: flex;
-  background-color: #073b20;
   justify-content: flex-end;
-  margin: 5px;
+  position: absolute;
+  top: 55px;
+  right: 40px;
+  
+
+  /* background-color: #073b20; */
+  /* margin: 5px; */
 }
-
-nav a {
-  color: #ffffff;
-  padding: 9px 20px;
-
+/*adds the text color of the nav bar options as well as padding spacing them out correctly, added font family for a more personal feel*/
+nav button a {
+  color: #fefdfd;
+  padding: 0px 15px;
   text-align: center;
+  font-family: monospace;
 }
 
-main {
-  display: flex;
-  flex-wrap: wrap;
+button {
+  background-color: #000000;
+  border-color: white;
+  border-radius: 10px;
+  padding: 3px;
 }
 
-aside {
-  flex: 1;
-  background-color: #b9c6ae;
+
+
+.image {
+  justify-content: right;
   padding: 20px;
 }
 
 section {
-  flex: 3;
-  background-color: #fff;
+  display: flex;
+  background-color: #000000ff;
   padding: 20px;
+  flex-direction: row;
+  align-items: center;
+  
+  
 }
 
-.image {
+aside {
+  flex-basis: 20%;
+  border-right: 4px solid black;
+ 
+  
+  
+  
+}
+aside h2 {
+  font-size: 30px;
+ color:white;
+  
+}
+article {
+  flex-basis: 80%;
+  
+}
+
+section img{
+  width: 100%;
+  height: 450px;
+  position: absolute;
+  /* top: 250px;
+  right: 20px;
+  left: 240px; */
+  opacity: 20%;
+  filter: blur(2px);
+  padding-right: 40px;
+  transition: 3s;
+  
+
+}
+
+article p {
+  font-size: 22px;
+  padding: 20%;
+  background-color: rgb(0, 0, 0);
+  color: #fffafa;
+  /* text-shadow: #000000 3px 2px; */
+ float: inline-end;
+ 
+ 
+  
+}
+
+/* .image {
   background-color: #fff;
   width: 100%;
   padding: 20px;
   height: 200px;
-  border: 1px solid black;
-}
+  border: 3px solid black;
+} */
 
 footer {
   padding: 20px;
   text-align: center;
-  background: #1c5f35;
+  background: #090909;
   color: #fff;
   display: flex;
   justify-content: space-evenly;
+  text-shadow: black 2px 2px;
 }
 
-@media screen and (max-width: 768px) {
- 
+@media screen and (max-width: 823px) {
   main,
   nav {
     flex-direction: column;
+   
   }
- 
- 
-  
+}
+
+@media screen and (max-width: 823px) {
+  header h2{
+    left: 20px;
+  padding: 20px;
+   
+  }
 }
