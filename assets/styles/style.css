@@ -7,8 +7,9 @@ html {
 /*universal code thats affecting the height and width as well as a universal font family*/
 * {
   box-sizing: border-box;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: monospace;
+  margin: 0px;
+  padding: 0px;
 }
 
 /*made the header a flex parent, gives the header a color, applies padding to the contents, affects the text color of everything inside, is putting equal space between all content, alines everything across x axis*/
@@ -22,15 +23,20 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-
+/*portfolio header*/
 header h2 {
-  position: absolute;
+  position: relative;
+  left: 45px;
+  top: 130px;
+  font-size: 30px;
+
+  /* position: absolute;
   top: 100px;
   right: 400px;
   font-size: 30px;
-  font-family: monospace; 
+  font-family: monospace;  */
 }
-
+/*Jakob pfeifer header*/
 header h1 {
   font-size: 50px;
   position: absolute;
@@ -38,14 +44,17 @@ header h1 {
   left: 20px;
   padding: 20px;
   font-family: monospace;
-  
+  /*first attempt at gradient text*/
+  display: inline-block;
+  background: linear-gradient(45deg, rgb(255, 255, 255), rgb(0, 181, 205));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /*makes image inside header stretched*/
 hero img {
   width: 100%;
   height: 200px;
-  
 }
 
 /*makes nav bar exist due to background color, pushes text to the right of nav-bar,gives it a margin to space out the nav bar from header*/
@@ -56,7 +65,6 @@ nav {
   position: absolute;
   top: 55px;
   right: 40px;
-  
 
   /* background-color: #073b20; */
   /* margin: 5px; */
@@ -76,11 +84,10 @@ button {
   padding: 3px;
 }
 
-
-
 .image {
   justify-content: right;
   padding: 20px;
+  
 }
 
 section {
@@ -90,28 +97,21 @@ section {
   flex-direction: row;
   align-items: center;
   
-  
 }
 
 aside {
   flex-basis: 20%;
   border-right: 4px solid black;
- 
-  
-  
-  
 }
 aside h2 {
   font-size: 30px;
- color:white;
-  
+  color: white;
 }
 article {
   flex-basis: 80%;
-  
 }
 
-section img{
+.about-me {
   width: 100%;
   height: 450px;
   position: absolute;
@@ -122,8 +122,6 @@ section img{
   filter: blur(2px);
   padding-right: 40px;
   transition: 3s;
-  
-
 }
 
 article p {
@@ -132,11 +130,40 @@ article p {
   background-color: rgb(0, 0, 0);
   color: #fffafa;
   /* text-shadow: #000000 3px 2px; */
- float: inline-end;
- 
- 
+  float: inline-end;
+}
+.article-img {
+  padding: 40px;
   
 }
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+ 
+}
+
+li:first-child {
+  grid-column: span 3;
+
+}
+
+li img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border: 5px solid white;
+}
+/* h3 {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min-max(300px, 1fr));
+  gap: 20px;
+} */
 
 /* .image {
   background-color: #fff;
@@ -154,20 +181,38 @@ footer {
   display: flex;
   justify-content: space-evenly;
   text-shadow: black 2px 2px;
+  text-decoration: underline 2px;
 }
 
-@media screen and (max-width: 823px) {
+@media screen and (max-width: 768px) {
   main,
-  nav {
+  nav, .article-img {
     flex-direction: column;
+  }
+   nav button {
+      position: relative;
+      right: 150px;
+      top: 140px;
+    }
+    
+  }
+
+
+@media screen and (max-width: 768px) {
+  ul {
+    
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+    gap: 30px;
+    flex-wrap: wrap;
    
+  }
+
+
+ 
+  li:first-child {
+    grid-column: span 1;
   }
 }
 
-@media screen and (max-width: 823px) {
-  header h2{
-    left: 20px;
-  padding: 20px;
-   
-  }
-}
