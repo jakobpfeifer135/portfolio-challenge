@@ -190,7 +190,7 @@ footer {
     flex-direction: column;
   }
    nav button {
-      position: relative;
+      position: relativ;
       right: 150px;
       top: 140px;
     }
