@@ -1,47 +1,40 @@
-/*this is an html feature that affects how the auto navigation behaves*/
+:root {
+  --outer-space: #03070c;
+  --bright-turquoise: #2aefcb;
+  --gin: #fdfffe;
+  --heliotrope: #97f1e5;
+}
+
+/*start of all universal modifiers*/
 html {
   scroll-snap-type: smooth;
   min-height: 100%;
 }
 
-/*universal code thats affecting the height and width as well as a universal font family*/
 * {
   box-sizing: border-box;
   font-family: monospace;
   margin: 0px;
   padding: 0px;
 }
+/*end of universal modifiers*/
 
-/*made the header a flex parent, gives the header a color, applies padding to the contents, affects the text color of everything inside, is putting equal space between all content, alines everything across x axis*/
-
+/*start of header code*/
+/*parent element of the header*/
 header {
   display: flex;
   /* padding: 10px; */
   text-align: center;
   background: #040404;
   color: #fff;
-  justify-content: space-between;
+ flex-wrap: wrap;
+ justify-content: space-between;
   align-items: center;
 }
-/*portfolio header*/
-header h2 {
-  position: relative;
-  left: 45px;
-  top: 130px;
-  font-size: 30px;
-
-  /* position: absolute;
-  top: 100px;
-  right: 400px;
-  font-size: 30px;
-  font-family: monospace;  */
-}
-/*Jakob pfeifer header*/
+/*controls the size and color of my name*/
 header h1 {
   font-size: 50px;
-  position: absolute;
   top: 20px;
-  left: 20px;
   padding: 20px;
   font-family: monospace;
   /*first attempt at gradient text*/
@@ -50,129 +43,196 @@ header h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-/*makes image inside header stretched*/
+/*main splash img of header*/
 hero img {
   width: 100%;
   height: 200px;
 }
+/*end of header code*/
 
-/*makes nav bar exist due to background color, pushes text to the right of nav-bar,gives it a margin to space out the nav bar from header*/
-/*cut two lines of code to stack nav bar onto header*/
+/*start of nav bar code*/
+/*parent of all flex bar modifiers*/
 nav {
   display: flex;
-  justify-content: flex-end;
-  position: absolute;
-  top: 55px;
-  right: 40px;
-
-  /* background-color: #073b20; */
-  /* margin: 5px; */
-}
-/*adds the text color of the nav bar options as well as padding spacing them out correctly, added font family for a more personal feel*/
-nav button a {
-  color: #fefdfd;
-  padding: 0px 15px;
-  text-align: center;
-  font-family: monospace;
+  /* justify-content: flex-end; */
+  /* position: absolute;
+  top: 30px;
+  right: 40px; */
+  list-style-type: none;
+  margin-right: 20px;
 }
 
-button {
-  background-color: #000000;
-  border-color: white;
-  border-radius: 10px;
-  padding: 3px;
-}
 
-.image {
-  justify-content: right;
-  padding: 20px;
+/*applies the styles to the text in the lists*/
+nav li a {
+  color: var(--heliotrope);
+  font-family: mono;
+  font-size: 20px;
+  width: 100%;
   
+  /* margin-right: 65px; */
+  margin-left: 10px;
+}
+
+/*end of nav bar code*/
+/*start of about me code*/
+/*parent of articles*/
+article {
+  display: flex;
+  text-align: center;
+  margin-top: 20px;
+}
+/*about me header text*/
+article h4 {
+  flex-basis: 30%;
+  margin-top: 10px;
+  margin-left: 80px;
+  border-right: 5px solid var(--outer-space);
+  justify-items: center;
+  font-size: 40px;
+  color: var(--outer-space);
+  text-align: start;
+  
+}
+/*about me paragraph text modifiers*/
+section h3 {
+  flex-basis: 70%;
+  padding: 20px;
+  margin-top: 3.5%;
+  font-size: 20px;
+  
+}
+/*end of about me code*/
+/*start of work section with images and links*/
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #7e8895;
+}
+/*targets the left side of all mains making them only take 30% of screen*/
+main aside {
+  flex-basis: 30%;
+  
+}
+/*makes all right sided content take the remainder screen*/
+main section {
+  flex-basis: 70%;
 }
 
 section {
+  /* border: 8px solid rgb(73, 70, 70); */
+  text-align: center;
+  /* margin: 7px; */
+  /* background-color: var(--outer-space); */
   display: flex;
-  background-color: #000000ff;
-  padding: 20px;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  /* padding: 150px; */
+  border-left: 5px solid rgb(2, 2, 2);
+}
+/*just targets the large img to make it be 3x larger than the others*/
+#big-image {
+  flex-basis: 100%;
+  height: 500px;
+  /* margin: 30px; */
+  background-image: url(../images/horiseon.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   
-}
-
-aside {
-  flex-basis: 20%;
-  border-right: 4px solid black;
-}
-aside h2 {
-  font-size: 30px;
-  color: white;
-}
-article {
-  flex-basis: 80%;
-}
-
-.about-me {
-  width: 100%;
-  height: 450px;
-  position: absolute;
-  /* top: 250px;
-  right: 20px;
-  left: 240px; */
-  opacity: 20%;
-  filter: blur(2px);
-  padding-right: 40px;
-  transition: 3s;
-}
-
-article p {
-  font-size: 22px;
-  padding: 20%;
-  background-color: rgb(0, 0, 0);
-  color: #fffafa;
-  /* text-shadow: #000000 3px 2px; */
-  float: inline-end;
-}
-.article-img {
-  padding: 40px;
-  
-}
-
-ul {
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 1rem;
  
 }
 
-li:first-child {
-  grid-column: span 3;
-
-}
-
-li img {
-  display: block;
-  width: 100%;
+/*targets only the small images*/
+section .small-img {
+  flex-basis: 33%;
   height: 300px;
-  object-fit: cover;
-  border: 5px solid white;
 }
-/* h3 {
-  color: white;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, min-max(300px, 1fr));
-  gap: 20px;
-} */
-
-/* .image {
-  background-color: #fff;
+/*targets the first small img*/
+#box-2 {
+  height: 100%;
   width: 100%;
-  padding: 20px;
-  height: 200px;
-  border: 3px solid black;
-} */
+  margin: 3px;
+  background-image: url(../images/weather-photo-pexels.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+}
+/*targets the 2nd small img*/
+#box-3 {
+  height: 100%;
+  width: 100%;
+  margin: 3px;
+  background-image: url(../images/food-delivery-pexels.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+}
+/*targets the 3rd small img*/
+#box-4 {
+  height: 100%;
+  width: 100%;
+  margin: 3px;
+  background-image: url(../images/project-management-pexels.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+ 
+}
 
+.card {
+ 
+  justify-content: center;
+  border: none;
+  
+}
+/*force aligning the large images text*/
+#big-image h5 {
+  margin-top: 200px;
+}
+
+/*both are modifiers for the text that is being applied to the images*/
+.text-box {
+  font-size: 40px;
+  color: var(--gin);
+  text-decoration: underline;
+  font-family: mono;
+  text-shadow: 5px 2px 5px black;
+}
+.text-box-2 {
+  font-size: 20px;
+  color: var(--gin);
+  text-decoration: underline;
+  font-family: mono;
+  text-shadow: 5px 2px 5px black;
+ 
+  
+}
+/*end of work section code*/
+h1 a {
+  text-decoration: underline;
+  color: white;
+
+}
+
+
+.Contact {
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+h4 {
+  font-size: 35px;
+  margin-top: 30px;
+  padding-left: 30px;
+  
+}
+/*footer*/
 footer {
   padding: 20px;
   text-align: center;
@@ -183,36 +243,50 @@ footer {
   text-shadow: black 2px 2px;
   text-decoration: underline 2px;
 }
-
+/*formatted for smaller screens with multiple column directions*/
 @media screen and (max-width: 768px) {
-  main,
-  nav, .article-img {
+  main {
     flex-direction: column;
-  }
-   nav button {
-      position: relativ;
-      right: 150px;
-      top: 140px;
-    }
-    
-  }
-
-
-@media screen and (max-width: 768px) {
-  ul {
-    
-    display: flex;
-    max-width: 100%;
-    max-height: 100%;
-    gap: 30px;
     flex-wrap: wrap;
    
   }
-
-
- 
-  li:first-child {
-    grid-column: span 1;
+  section .small-img {
+   flex-basis: 100%;
+   height: 200px;
+   
+   
   }
-}
+ nav {
+  flex-direction: column;
+  text-align: center;
+  
+  
+ }
 
+
+ header {
+  flex-direction: column;
+  
+ }
+
+ .Contact {
+  flex-direction: column;
+  text-align: center;
+ }
+
+ h4 {
+  text-align: center;
+  padding: 0%;
+  border: 0px;
+  
+  margin-top: 25px;
+
+ }
+
+ section {
+  
+  justify-content: center;
+  border-left: none;
+ }
+
+}
